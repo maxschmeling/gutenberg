@@ -29,6 +29,7 @@ const BLOCK_BINDINGS_ALLOWED_BLOCKS = {
 	'core/heading': [ 'content' ],
 	'core/image': [ 'id', 'url', 'title', 'alt' ],
 	'core/button': [ 'url', 'text', 'linkTarget', 'rel' ],
+	'remote-data-blocks/shopify-product-type': [ 'shopify_product_type' ],
 };
 
 const DEFAULT_ATTRIBUTE = '__default';
@@ -192,7 +193,6 @@ export const withBlockBindingSupport = createHigherOrderComponent(
 
 			return attributes;
 		}, [ blockBindings, name, clientId, blockContext, registry, sources ] );
-
 		const { setAttributes } = props;
 
 		const _setAttributes = useCallback(
@@ -285,7 +285,6 @@ export const withBlockBindingSupport = createHigherOrderComponent(
 				hasParentPattern,
 			]
 		);
-
 		return (
 			<>
 				<BlockEdit

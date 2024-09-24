@@ -12,6 +12,7 @@ import { dispatch } from '@wordpress/data';
  */
 import patternOverrides from './pattern-overrides';
 import postMeta from './post-meta';
+import remoteData from './remote-data';
 import { unlock } from '../lock-unlock';
 
 /**
@@ -28,6 +29,7 @@ export function registerCoreBlockBindingsSources() {
 	const { registerBlockBindingsSource } = unlock( blocksPrivateApis );
 	registerBlockBindingsSource( patternOverrides );
 	registerBlockBindingsSource( postMeta );
+	registerBlockBindingsSource( remoteData );
 }
 
 /**
